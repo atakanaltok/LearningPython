@@ -1,4 +1,98 @@
 """
+def even_odd():
+    number_taker = int(input("Enter a number: "))
+
+    if number_taker % 2 == 1:
+        print("Odd")
+        return even_odd()
+
+    else:
+        print("Even")
+        return even_odd()
+""" 
+# Determine if a number is Odd or Even
+
+
+
+
+"""
+h_age = int(input("Input a dog's age in human years: "))
+
+if h_age < 0:
+    print("Age must be positive number.")
+    exit()
+elif h_age <= 2:
+    d_age = h_age * 10.5
+else:
+    d_age = 21 + (h_age - 2) * 4
+
+print("The dog's age in dog's years is", d_age)
+""" 
+# x=a  if:x=b elif:x=c  print(x)
+
+
+
+
+
+
+"""
+letter = input("Enter a letter: ")
+L = ["a", "e", "i", "o", "u"]
+
+K = "aeiou"
+M = []
+for a in K:
+    M.append(a)
+# Now M is exactly equal to L
+
+N = ["kel", "du hast", "aeiou", "dkfasnjd", "nds", ""]
+T = []
+the_word = N.index("aeiou")
+for j in N[the_word]:
+    T.append(j)
+# Now T is exactly equal to L
+
+
+# if any(letter == i for i in L):
+# if letter in L:
+
+if any(letter == i for i in L):
+    print("A vowel found!")
+elif letter == "y":
+    print("öyle böyle")
+else:
+    print("A constant")
+""" 
+# if any(letter == i for i in A_list)
+
+
+
+
+
+"""
+month_taker = input("Enter a month name: ")
+list_of_30_months = ["April", "June", "September", "November"]
+dayss = 31
+
+if any(month_taker == finder for finder in list_of_30_months):
+
+    dayss = 30
+
+elif month_taker == "February":
+
+    dayss = "28 or 29"
+
+print(dayss)
+# By dayss=31 and printing it at the end prevents us to check if it is a valid input
+# you can put a try-except after the month_taker but then why do we even used dayss?
+
+""" 
+#  \\\ if any(a == i for i in L ///  PLUS  \\\ x=a  if:x=b elif:x=c  print(x) ///
+
+
+
+
+"""
 def triangulator(x,y,z):
 
     if x == y == z:
