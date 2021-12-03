@@ -1,4 +1,19 @@
-aa
+"""
+def triangulator(x,y,z):
+
+    if x == y == z:
+        print("a")
+
+    elif (x== y or z) or (y == z):
+        print("da")
+
+    else:
+        print("non")
+
+    return ""
+
+print(triangulator(1,2,2))
+""" 
+# Insert length of the 3 sides of your triangle to learn its name!
 
 
-"www.world"
