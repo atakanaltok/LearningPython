@@ -1,0 +1,38 @@
+# We have a list as an input called "ar"
+# We sum all the numbers in ar
+
+def summermex(ar):    # Solution 1
+	return sum(ar)
+
+def summermex(ar):    # Solution 2
+	a=0
+	for i in ar:
+		a += i
+	return a
+
+
+# a=[13,1,45]
+# b=[12,1,32]
+# If this is score comparasion
+
+def compareTriplets(a, b):
+    # Write your code here
+    k=0
+    m=0
+    
+    for i in range(3):
+        
+        if a[i]>b[i]:
+            
+            k += 1
+            
+        elif a[i]<b[i]:
+            
+            m += 1
+            
+    initial_ar= [k,m]
+
+
+
+
+
