@@ -1,3 +1,5 @@
+### PROBLEM 1 ###
+
 # We have a list as an input called "ar"
 # We sum all the numbers in ar
 
@@ -11,28 +13,63 @@ def summermex(ar):    # Solution 2
 	return a
 
 
+
+
+### PROBLEM 2 ###
+
+
+# Given a and b, determine their respective comparison points and return a list [n,m] where n and m are the total wins of alice(a),bob(b) respectively 
+# 0 points for the same value comparasion
+# EXAMPLES
 # a=[13,1,45]
 # b=[12,1,32]
-# If this is score comparasion
+# returns [2,0]
 
 def compareTriplets(a, b):
     # Write your code here
-    k=0
-    m=0
+    alice, bob = 0, 0
     
-    for i in range(3):
+    for i in range(len(a)):
         
         if a[i]>b[i]:
             
-            k += 1
+            alice += 1
             
         elif a[i]<b[i]:
             
-            m += 1
+            bob += 1
             
-    initial_ar= [k,m]
+    initial_ar= [alice, bob]
+
+
+def compareTriplets(a, b):
+    a_score, b_score = 0, 0
+    for i in range(len(a)):
+    
+        a_score += a[i] > b[i]
+        b_score += b[i] > a[i]
+    
+    return [a_score, b_score]
+
+
+def solve(a, b):
+    alice = []
+    bob = []
+    for _ in range(len(a)):
+        if(a[_] > b[_]): alice.append(1)
+        elif(a[_] < b[_]): bob.append(1)
+    return sum(alice), sum(bob)
 
 
 
-
+def solve(a0, a1, a2, b0, b1, b2):
+    alice = [a0, a1, a2]
+    bob = [b0, b1, b2]
+    score = [0, 0]
+    for a, b in zip(alice, bob):
+        if a > b:
+            score[0]+= 1
+        elif b > a:
+            score[1]+=1
+    return score
 
