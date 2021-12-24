@@ -1,5 +1,5 @@
-Task
-
+#### 1 ####
+### TASK ###
 Given an integer, n, perform the following conditional actions:
 
 If n is odd, print Weird
@@ -9,7 +9,9 @@ If n is even and greater than 20, print Not Weird
 
 
 ### MY CODE
-if __name__ == '__main__':
+if __name__ == '__main__':                        # it means name == 'main' In python single equal signs are reserved for variable assignment 
+                                                  # so a variable assignment is as so : name = 'John'
+                                                  # it means that if the of the file or the file name is equal to 'main' then it returns true else false
     n = int(input().strip())
     
 if n%2==1:
@@ -45,5 +47,67 @@ n = int(raw_input())    # We use rawinput() function to get input from user
 if n%2==0 and (n in range(2,6) or n>20 ):
     print "Not",
 print "Weird"
+
+
+
+
+
+
+#### 2 ####
+a, b = int(input()), int(input())
+
+print('{0} \n{1} \n{2}'.format((a + b), (a - b), (a * b)))
+
+# Or you can also use this:     print('{:d}\n{:d}\n{:d}'.format(a+b,a-b,a*b))
+
+
+
+a, b = int(input()), int(input())
+print((a + b), (a - b), (a * b), sep='\n')
+
+# Or you can also use this:     for i in [a+b, a-b, a*b]: print(i)
+
+
+
+## ARBITARY ARGUMENT LIST ##
+
+print(*[list])      # This expands a list into a sequence of positional parameters by using the * operator
+
+
+
+
+# While working with booleans, do not try to return True or False statements as in the following
+
+def f():
+	if condition:
+    	return True
+    else:
+    	return False
+
+# Every condition already evaluates as a boolean, 3 = 5 is a False and 5 = 5 is a True
+
+def f():
+	return condition
+
+
+# An example for this concept
+# Determine whether or not a year is a leap year
+
+## The DRY and efficient way
+def is_leap(year):
+    return year % 400 == 0 and (year % 4 == 0 or year % 100 != 0)
+
+## The WET and inefficient way
+def is_leap(year):
+    if year % 400 == 0:
+        return True
+    if year % 100 == 0:
+        return False
+    if year % 4 == 0:
+        return True
+    else:
+        return False
+
+
 
 
