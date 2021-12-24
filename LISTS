@@ -1,4 +1,4 @@
-          ACCESSING VALUES IN LISTS
+============> ACCESSING VALUES IN LISTS
 
 k=True
 
@@ -7,18 +7,18 @@ omega = [44-22, k, "k","22*2", 22*2]     ===    [22, True, ‘k’, ‘22*2’, 
 
 omega[:] === omega  # Identity
 
-
-print(omega [-4::2]     )           ===    [True, '22*2']
-print(omega [-32::2]    )           ===    [21, 'k', 99] 
-print(omega [4::-1]     )           ===    [44, '22*2', 'k', True, 21]
-print(omega [::-1]      )           ===    [44, '22*2', 'k', True, 21]
-print(omega [:-100:-1]  )           ===    [44, '22*2', 'k', True, 21]
-print(omega [::-2]      )           ===    [44, 'k', 21]
+omega [::2]                  ===    [22, "k", 44]                     === omega [-len(omega)::2]
+omega [-3::2]                ===    ["k", 44]
+omega [-32::2]               ===    [21, 'k', 99] 
+omega [4::-1]                ===    [44, '22*2', 'k', True, 21]
+omega [::-1]                 ===    [44, '22*2', 'k', True, 21]
+omega [:-100:-1]             ===    [44, '22*2', 'k', True, 21]
+omega [::-2]                 ===    [44, 'k', 21]
 
 omega[len(anything):]
 
 
-Changing portions in list
+=========> Changing portions in list
 
 omega[:2] = [11,101]      # Changes firs two
 
@@ -28,7 +28,7 @@ omega[:]  = []            # Deletes list
 omega.clear()             # Deletes list
 
 
-Commands that are out of the rage will give blank
+======> Commands that are out of the rage will give blank
 
 omega[7:] 
 omega[7:13] 
@@ -40,7 +40,7 @@ omega[::-1]
 
 
 
-LISTS IN LISTS
+============> LISTS IN LISTS
 
 
 alpha = [  [2,4,6,8], 101, "a word", ["nested", 1008, 234]  ]
@@ -56,23 +56,26 @@ a[0:1] [0] [1] [1]      === e                     = a[0][1][1]
 
 
 
-SOTRING
+============> SOTRING
 
-Sorting with .sort
+
+=========> Sorting with .sort
+
 This will sort the main list
 
 friends = ["Mulan", "Dragon", "Mushu", "Chickens"]
 friends.sort()          === ["Chickens", "Dragon", "Mulan", "Mushu"]
 
 
-Sorting with .sorted
+=========> Sorting with .sorted
+
 This will create an identical list and will sort that list, original list will not change
 friends.sorted()          === 
 
 
 
 
-ADDITION
+============> ADDITION
 
 beta  = list(range(5))                  ===       [0, 1, 2, 3, 4]
 tetha = list(range(10,16))              ===       [10, 11, 12, 13, 14, 15]
@@ -85,7 +88,8 @@ beta += tetha                           ===       [0, 1, 2, 3, 4, 'write anythin
 
 
 
-Adition with .extend
+=========> Adition with .extend
+
 It extends; therefore, it takes list, tuple, string
 
 meta  = list(range(3))
@@ -94,7 +98,8 @@ meta.extend(tetha)                      ===       [1, 2, 3, 4, 5, 6, 10, 11, 12,
 meta.extend("smart")                    ===       [1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, "s", "m", "a", "r", "t"]
 
 
-Addition with .append
+=========> Addition with .append
+
 It nests, therefore, it can takes any thing (list, dic, )
 
 meta.append(    [4, 5, 6]    )          ===       [1, 2, 3, [4, 5, 6]]
