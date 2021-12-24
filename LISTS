@@ -1,0 +1,70 @@
+          ACCESSING VALUES IN LISTS
+
+k=True
+
+omega = [44-22, k, "k","22*2", 22*2]     ===    [22, True, ‘k’, ‘22*2’, 44]
+
+
+print(omega [-4::2]     )           ===    [True, '22*2']
+print(omega [-32::2]    )           ===    [21, 'k', 99] 
+print(omega [4::-1]     )           ===    [44, '22*2', 'k', True, 21]
+print(omega [::-1]      )           ===    [44, '22*2', 'k', True, 21]
+print(omega [:-100:-1]  )           ===    [44, '22*2', 'k', True, 21]
+print(omega [::-2]      )           ===    [44, 'k', 21]
+
+omega[:] === omega
+
+Changing portions in list
+
+omega[:2] = [11,101]    # Changes firs two
+omega[:2] = []          # Delets first two
+omega[:]  = []            # Deletes list
+
+
+
+Commands that are out of the rage will give blank
+
+omega[7:] 
+omega[7:13] 
+omega[:13]
+
+omega[2:-4] 
+omega[::-1]
+
+
+
+
+LISTS IN LISTS
+
+
+alpha = [  [2,4,6,8], 101, "a word", ["nested", 1008, 234]  ]
+
+a= [[“Hi”, “Hello”]]
+
+a[0:1]                  === [[“Hi”, “Hello”]]     = a[0] but in a list
+a[0:1] [0]              === [“Hi”, “Hello”]       = a[0] but pure
+a[0:1] [0] [1]          === “Hello”               = a[0][1]
+a[0:1] [0] [1] [1]      === e                     = a[0][1][1]
+
+
+
+
+
+SOTRING
+
+Sorting with .sort
+This will sort the main list
+
+friends = ["Mulan", "Dragon", "Mushu", "Chickens"]
+friends.sort()          === ["Chickens", "Dragon", "Mulan", "Mushu"]
+
+
+Sorting with .sorted
+This will create an identical list and will sort that list, our main list will not change
+friends.sorted()          === 
+
+
+
+
+
+
