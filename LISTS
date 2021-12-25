@@ -5,17 +5,41 @@ k=True
 omega = [44-22, k, "k","22*2", 22*2]     ===    [22, True, ‘k’, ‘22*2’, 44]
 
 
-omega[:] === omega  # Identity
-
-omega [::2]                  ===    [22, "k", 44]                     === omega [-len(omega)::2]
-omega [-3::2]                ===    ["k", 44]
-omega [-32::2]               ===    [21, 'k', 99] 
-omega [4::-1]                ===    [44, '22*2', 'k', True, 21]
+omega [:]        # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
+omega [:: 1]     # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
 omega [::-1]                 ===    [44, '22*2', 'k', True, 21]
+
+======>If last number is 
+positive ==> Counted from left to right (THIS IS THE DEFAULT)
+negative ==> Counted from right to left
+
+
+======>This means that when
+
+==> positive, the latter number must be greater than former number 
+
+omega [:2]                   ===    [22, True]                      0 < 2
+omega [2:4]                  ===    ['k', '22*2']                   3 < 5
+omega [1:13]                 ===    [True, 'k', '22*2', 44]         1 < 13
+omega [-5:-2]                ===    [22, True, 'k']                -5 < -2
+omega [-3::2]                ===    ["k", 44]                      -3 < len(omega)
+omega [-32::2]               ===    [21, 'k', 99]                 -32 < len(omega)
+
+
+==> negative, the former number must be greater than latter number
+
+omega [4::-1]                ===    [44, '22*2', 'k', True, 21]     4 > len
 omega [:-100:-1]             ===    [44, '22*2', 'k', True, 21]
 omega [::-2]                 ===    [44, 'k', 21]
 
+
+
+omega [::2]                  ===    [22, "k", 44]         === omega [-len(omega)::2]
+
 omega[len(anything):]
+
+
+
 
 
 =========> Changing portions in list
