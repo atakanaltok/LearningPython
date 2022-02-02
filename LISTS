@@ -14,8 +14,7 @@ positive ==> Counted from left to right (THIS IS THE DEFAULT)
 negative ==> Counted from right to left
 
 
-======>This means that when
-
+This means that when:
 ==> positive, the latter number must be greater than former number 
 
 omega [:2]                   ===    [22, True]                      0 < 2
