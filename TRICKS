@@ -1,0 +1,24 @@
+# More readable numbers
+
+# A and B are identical, A==B, but you can read B easier
+A = 10000000
+B = 10_000_000
+
+
+
+
+
+# Unpacking Operator
+
+first = [1, 2, 3]
+second = [4, 5, 6]
+combined = [*first, "a", *second]
+ 
+first = {"x": 1}
+second = {"y": 2}
+combined = {**first, **second}
+
+
+
+
+
