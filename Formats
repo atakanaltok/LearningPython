@@ -3,6 +3,19 @@ name = f”{first} {last}”
 
 
 
+"{} is what we call {}".format
+
+n = input()
+
+if n>30:
+	print(‘{} bigger than 30’.format(n))
+else:
+	print(‘{} smaller than 30’.format(n))
+
+
+
+
+
 
 FUNCTIONS
 
