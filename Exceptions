@@ -1,0 +1,20 @@
+# Handling Exceptions 
+try: 
+  … 
+except (ValueError, ZeroDivisionError):
+  …
+else: 
+  # no exceptions raised
+finally:
+  # cleanup code 
+ 
+# Raising exceptions 
+if x < 1:      
+    raise ValueError(“…”)
+ 
+# The with statement 
+with open(“file.txt”) as file:     
+   … 
+   
+   
+
