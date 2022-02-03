@@ -17,6 +17,20 @@ omega [:]        # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
 omega [:: 1]     # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
 omega [::-1]                 ===    [44, '22*2', 'k', True, 21]
 
+
+# Why those identities exist?
+
+a = list(range(4)
+
+b = a
+b[0] = 10
+# Both a and b will turn into [10, 1, 2, 3]
+
+b = a[:]
+b[0] = 10
+# Only b changes to [10, 1, 2, 3]
+
+
 ======>If last number is 
 positive ==> Counted from left to right (THIS IS THE DEFAULT)
 negative ==> Counted from right to left
