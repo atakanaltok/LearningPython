@@ -1,0 +1,74 @@
+# Creating classes
+class Point: 
+    def __init__(self, x, y):          
+        self.x = x
+        self.y = y 
+ 
+    def draw(self):          
+        …
+ 
+# Instance vs class attributes
+class Point: 
+    default_color = “red”
+ 
+    def __init__(self, x, y):          
+        self.x = x
+ 
+# Instance vs class methods
+class Point: 
+    def draw(self):         
+        …
+     
+    @classmethod
+    def zero(cls):          
+        return cls(0, 0)
+ 
+ 
+# Magic methods
+__str__()
+ __eq__()
+__cmp__()
+... 
+ 
+# Private members 
+class Point: 
+    def __init__(self, x):          
+        self.__x = x
+ 
+ 
+# Properties 
+class Point: 
+    def __init__(self, x):          
+        self.__x = x
+ 
+    @property
+    def x(self):    
+        return self.__x     
+ 
+    @property.setter:
+    def x.setter(self, value): 
+        self.__x = value  
+ 
+# Inheritance
+class FileStream(Stream): 
+    def open(self):         
+         super().open()
+         … 
+ 
+# Multiple inheritance 
+class FlyingFish(Flyer, Swimmer): 
+    … 
+ 
+# Abstract base classes
+from abc import ABC, abstractmethod
+ 
+class Stream(ABC): 
+    @abstractmethod
+    def read(self): 
+        pass 
+ 
+# Named tuples 
+from collections import namedtuple
+ 
+Point = namedtuple(“Point”, [“x”, “y”])
+point = Point(x=1, y=2)
