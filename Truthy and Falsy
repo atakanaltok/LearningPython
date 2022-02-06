@@ -1,0 +1,109 @@
+# Instead of writing
+if len(my_list) != 0:
+   print("Not empty!")
+
+# Write
+if my_list:
+   print("Not empty!")
+
+
+
+
+user = input("Enter: ")
+
+if user:	        # if user is something other than “” 
+	print(“hello”)
+
+
+
+a = -1.0 
+
+if a:
+  print("It is a True")     # It will print this
+
+
+while True:     # Or you can write "while 1:"
+	…
+
+
+
+a = 1
+a += True 		# a += 1
+
+
+
+print(() or 1)          # 1
+print(1 and ())         # ()
+
+print(True or 1)        # True
+print(1 or True)        # 1
+
+
+print(None or () or 0)      # 0
+print(0 or ())              # ()
+print(() or 0)              # 0
+
+
+
+None
+False
+
+0
+0.0
+0j
+
+decimal.Decimal(0)
+fraction.Fraction(0, 1)
+
+[] - an empty list
+{} - an empty dict
+() - an empty tuple
+'' - an empty str
+b'' - an empty bytes
+set() - an empty set
+an empty range, like range(0)
+
+objects for which
+  obj.__bool__() returns False
+  obj.__len__() returns 0
+
+
+
+class Account:
+	def __init__(self, balance):
+		self.balance = balance
+		
+	def __bool__(self):
+		return self.balance > 0
+
+account1 = Account(500)
+bool(account1)        #True
+
+account2 = Account(0)
+bool(account2)    #False
+
+
+
+
+# You can also use .__bool__() to make an object neither truthy nor falsy:
+
+>>> class ExcludedMiddle:
+...     def __bool__(self):
+...             raise ValueError("neither")
+...
+>>> x = ExcludedMiddle()
+>>> bool(x)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in __bool__
+ValueError: neither
+
+>>> if x:
+...     print("x is truthy")
+... else:
+...     print("x is falsy")
+...
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in __bool__
+ValueError: neither
