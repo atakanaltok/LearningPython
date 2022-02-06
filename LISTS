@@ -31,6 +31,12 @@ b[0] = 10
 # Only b changes to [10, 1, 2, 3]
 
 
+# You can use these too to only change b
+b = list(a)
+b = a.copy()
+
+
+
 ======>If last number is 
 positive ==> Counted from left to right (THIS IS THE DEFAULT)
 negative ==> Counted from right to left
