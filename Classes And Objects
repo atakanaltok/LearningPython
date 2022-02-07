@@ -1,0 +1,129 @@
+# help(Point)
+# help(list)
+# help(str)
+
+
+class Point:
+    default_color = "red"  # Static class Point attribute
+    membership = True
+
+    # You can use Point.default_color to access "red,"
+    # which is something you cannot do with attributes
+
+    def __init__(self, x, y, z, v = 18):                 # Dynamic Attributes
+        self.assigning_x = x
+        self.assigning_y = y
+        self.__z = z                                    # Private members
+                                                        # It is the same with self.z, but it signals "don't change this" to other users of this code
+
+        if (self.membership):
+            self.ass = "WoW"
+
+        if v >= 18:
+            self.age = v
+
+    def ink(self):
+        print(f"This is {self.assigning_y}")
+
+    @classmethod                                        # They are def but within the class to make the class robust
+    def zero(cls):                                      # "cls" should be written just as "self"
+        return cls(0, 0, 0)  # it should return cls(...)
+
+    @classmethod
+    def summer(cls, num1, num2, num3):
+        return num1 + num2 + num3
+
+    @staticmethod
+    def adding(nus1, nus2):
+        return nus1 + nus2
+
+
+
+print(bool("False"))
+
+
+pointer1 = Point(1, 2, 3)
+pointer2 = Point(6, 7, 8)
+pointer3 = Point("ata", 101, 2*22, 0)
+
+# pointer1.default_color    === red
+# pointer2.default_color    === red
+
+print(pointer1.summer(13, 17, 15))
+print(pointer1.adding(10, 20))
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Magic / Dunder methods | You will nevel create them
+__str__()
+__eq__()
+__cmp__()
+... 
+
+
+
+
+# Methods
+
+class Point:
+    def __init__(self, x)
+        self.x = x
+
+    
+
+
+ 
+ 
+# Properties 
+class Point: 
+    def __init__(self, x):
+        self.__x = x
+ 
+    @property
+    def x(self):    
+        return self.__x     
+ 
+    @property.setter:
+    def x.setter(self, value): 
+        self.__x = value
+
+
+
+
+
+# Inheritance
+class FileStream(Stream): 
+    def open(self):       
+         super().open()
+         … 
+ 
+# Multiple inheritance 
+class FlyingFish(Flyer, Swimmer): 
+    … 
+ 
+# Abstract base classes
+from abc import ABC, abstractmethod
+ 
+class Stream(ABC): 
+    @abstractmethod
+    def read(self): 
+        pass 
+ 
+# Named tuples 
+from collections import namedtuple
+ 
+Point = namedtuple(“Point”, [“x”, “y”])
+point = Point(x=1, y=2)
