@@ -21,7 +21,9 @@ omega [:: 1]     # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
 
 # Reversing a list
 
-omega [::-1]                 ===    [44, '22*2', 'k', True, 21]
+omega [::-1]                 ===    [44, '22*2', 'k', True, 22]
+list(reversed(omega))        ===    [44, '22*2', 'k', True, 22]
+[*reversed(omega)]           ===    [44, '22*2', 'k', True, 22]
 
 
 # Why those identities exist?
