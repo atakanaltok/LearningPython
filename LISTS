@@ -22,7 +22,6 @@ omega [:: 1]     # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
 # Reversing a list
 
 omega [::-1]                 ===    [44, '22*2', 'k', True, 21]
-omega.sort(reverse=True)     ===    [44, '22*2', 'k', True, 21]
 
 
 # Why those identities exist?
@@ -191,7 +190,10 @@ friends = ["Mulan", "Dragon", "Mushu", "Chickens"]
 friends.sort()          === ["Chickens", "Dragon", "Mulan", "Mushu"]
 print(friends)          === ["Chickens", "Dragon", "Mulan", "Mushu"]
 
+
+
 # Custom sorting 
+
 items = [
     ("Product1", 10),
     ("Product2", 9),
@@ -199,6 +201,14 @@ items = [
 ]
  
 items.sort(key=lambda item: item[1])
+
+
+
+# Sorting and then reversing a list
+
+friends.sort(reverse=True)
+print(friends)              ===    ['Mushu', 'Mulan', 'Dragon', 'Chickens']
+
 
 
 =========> Sorting with .sorted
