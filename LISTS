@@ -18,7 +18,11 @@ omega = [44-22, k, "k","22*2", 22*2]     ===    [22, True, ‘k’, ‘22*2’, 
 
 omega [:]        # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
 omega [:: 1]     # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
+
+# Reversing a list
+
 omega [::-1]                 ===    [44, '22*2', 'k', True, 21]
+omega.sort(reverse=True)     ===    [44, '22*2', 'k', True, 21]
 
 
 # Why those identities exist?
@@ -100,18 +104,7 @@ if "f" in letters:
  
  
 
-# Sorting lists 
-letters.sort()
-letters.sort(reverse=True) 
 
-# Custom sorting 
-items = [
-    ("Product1", 10),
-    ("Product2", 9),
-    ("Product3", 11)
-]
- 
-items.sort(key=lambda item: item[1])
  
 # Map and filter 
 prices = list(map(lambda item: item[1], items))
@@ -192,16 +185,33 @@ print(f"\n{c}")
 
 =========> Sorting with .sort
 
-# This will sort the main list
+# This will sort THE MAIN LIST
 
 friends = ["Mulan", "Dragon", "Mushu", "Chickens"]
 friends.sort()          === ["Chickens", "Dragon", "Mulan", "Mushu"]
+print(friends)          === ["Chickens", "Dragon", "Mulan", "Mushu"]
+
+# Custom sorting 
+items = [
+    ("Product1", 10),
+    ("Product2", 9),
+    ("Product3", 11)
+]
+ 
+items.sort(key=lambda item: item[1])
 
 
 =========> Sorting with .sorted
 
-This will create an identical list and will sort that list, original list will not change
-friends.sorted()          === 
+This will create an identical list and will sort that list, the ORIGINAL list WILL NOT CHANGE
+
+a_copy = sorted(friends)          
+
+print(a_copy)               === ["Chickens", "Dragon", "Mulan", "Mushu"]
+print(sorted(friends))      === ["Chickens", "Dragon", "Mulan", "Mushu"]
+print(friends)              === ["Mulan", "Dragon", "Mushu", "Chickens"]
+
+
 
 
 
