@@ -1,9 +1,12 @@
-VREATING
+CREATING LISTS
 
 letters = ["a", "b", "c"]     
 matrix = [[0, 1], [1, 2]]
 zeros = [0] * 5
 numbers = list(range(20))
+asteix = [*range(4)]        === list(range(4)) === [0, 1, 2, 3]
+
+
 
 
 ============> ACCESSING VALUES IN LISTS
@@ -19,6 +22,7 @@ omega [::-1]                 ===    [44, '22*2', 'k', True, 21]
 
 
 # Why those identities exist?
+# For equating lists with different id’s
 
 a = list(range(4)
 
@@ -64,6 +68,10 @@ omega [::-2]                 ===    [44, 'k', 21]
 omega [::2]                  ===    [22, "k", 44]         === omega [-len(omega)::2]
 
 omega[len(anything):]
+
+
+
+
 
 
 
@@ -121,7 +129,6 @@ combined = list(zip(list1, list2))    # [(1, 10), (2, 20)]
 
 
 
-
 ======> Commands that are out of the rage will give blank
 
 omega[7:] 
@@ -130,6 +137,13 @@ omega[:13]
 
 omega[2:-4] 
 omega[::-1]
+
+
+
+
+
+
+
 
 
 
@@ -149,13 +163,36 @@ a[0:1] [0] [1] [1]      === e                     = a[0][1][1]
 
 
 
+=====>  Iterating lists for N times where N is the len() of the lists inside the fundamental list
+
+
+range_lists = [list(range(2)), list(range(4)), list(range(3))]
+
+print(range_lists)
+print("")
+
+a = [(indexes, ranges) for ranges in range_lists for indexes in ranges]
+b = [indexes for ranges in range_lists for indexes in ranges]
+c = [ranges for ranges in range_lists for indexes in ranges]
+
+print(a)
+print("")
+print(b)
+print(f"\n{c}")
+
+
+
+
+
+
+
 
 ============> SOTRING
 
 
 =========> Sorting with .sort
 
-This will sort the main list
+# This will sort the main list
 
 friends = ["Mulan", "Dragon", "Mushu", "Chickens"]
 friends.sort()          === ["Chickens", "Dragon", "Mulan", "Mushu"]
@@ -166,6 +203,24 @@ friends.sort()          === ["Chickens", "Dragon", "Mulan", "Mushu"]
 This will create an identical list and will sort that list, original list will not change
 friends.sorted()          === 
 
+
+
+
+
+
+
+
+
+
+# None of append, extend, insert command return anything
+# They just update the list
+
+# If you want to assigne a variable to that updated list:
+
+lista = list(range(3))
+bar = lista[:]
+bar.insert(0, 5)
+print(bar)              === [5, 0, 1, 2]
 
 
 
@@ -182,25 +237,40 @@ beta += tetha                           ===       [0, 1, 2, 3, 4, 'write anythin
 
 
 
+
+
 =========> Adition with .extend
 
-It extends; therefore, it takes list, tuple, string
 
-meta  = list(range(3))
-meta.extend(    [4, 5, 6]    )          ===       [1, 2, 3, 4, 5, 6]
+# It extends; therefore, it takes list, tuple, string
+
+meta = list(range(3))
+meta.extend([4, 5, 6])                  ===       [1, 2, 3, 4, 5, 6]
 meta.extend(tetha)                      ===       [1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15]
 meta.extend("smart")                    ===       [1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, "s", "m", "a", "r", "t"]
 
 
+
+meta = list(range(3))
+
+meta.extend([50])         === meta.extend(50)            === [1, 2, 3, 50]
+meta.extend(["smart"])    === meta.extend("smart")       === [1, 2, 3, "smart"]
+
+
+
+
+
 =========> Addition with .append
 
-It nests, therefore, it can takes any thing (list, dic, )
+It nests, therefore, it can take any thing (list, dic)
 
-meta.append(    [4, 5, 6]    )          ===       [1, 2, 3, [4, 5, 6]]
+meta.append([4, 5, 6])    ===       [1, 2, 3, [4, 5, 6]]
 
 
-meta.extend( [ 50 ] )         === meta.extend(50)            === [1, 2, 3, 50]
-meta.extend( [ "smart" ] )    === meta.extend("smart")       === [1, 2, 3, "smart"]
+
+
+meta.insert
+
 
 
 
