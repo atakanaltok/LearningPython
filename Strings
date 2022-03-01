@@ -1,0 +1,101 @@
+"""
+alphanumeric (a-z, A-Z and 0-9)
+alphabetical (a-z and A-Z)
+
+"""
+
+
+Immutable
+
+# Assigning value
+
+string = "abracadabra"
+l = list(string)
+
+l[5] = "k"
+string = "".join(l)
+
+print(string)   # abrackdabra
+
+
+
+string = string[:5] + "k" + string[6:]
+
+print(string)     # abrackdabra
+
+
+
+
+
+
+
+
+
+
+
+
+
+greet = "Hello X"
+
+greet.lower()
+
+print(greet.lower())    # hello x
+print(greet)            # Hello x
+
+
+
+
+
+
+
+
+# String Addition
+“men” + “ken”
+
+“men” * 3 	# “menmenmen”
+[men] * 3 	# ['men', 'men', 'men']
+
+
+x = varlık
+“ar” in x would give us True
+if “var” in x:
+	print(ç)
+
+
+A < B < C … Z < a < b < c … z
+
+
+
+
+s = "Finding the indexes of occurrences of a substring in a string"
+ss = "st"
+
+for i in range(len(s) - len(ss) + 1):  
+    
+    # "len(s) - len(ss) + 1” is very beneficial when the "ss" is very long since it won't iterate the last indexes 
+    # But the "len(s)" can be also used instead (for short "ss"s)
+    
+    if s[i:(i + len(ss))] == ss:
+        print(i)
+
+
+
+# Obtaining the number of times that a substring occurs in a given string
+
+def count_substring(string, substring):
+
+    count = 0
+    
+    for i in range(len(string)):
+        if string[i:].startswith(substring):
+            count += 1
+    
+    return count
+
+    # return sum([1 for i in range(len(string) - len(substring) + 1) if string[i:i + len(substring)] == substring]))
+    # return [string[i:i + len(substring)] for i in range(len(string))].count(substring)
+
+
+
+
+
