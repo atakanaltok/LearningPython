@@ -5,4 +5,4 @@ Written By: Ben Stephenson
 My solutions to some of the problems of this book
 #
 HackerRank
-Alternatice codes for the problems
+My codes for the problems
