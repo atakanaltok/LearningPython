@@ -99,3 +99,55 @@ def count_substring(string, substring):
 
 
 
+
+
+
+def wrap(string, max_width):
+    a = ""
+    b = len(string) // int(max_width)
+
+    for i in range(b + 1):
+        a = a + string[max_width * i: max_width * (i + 1)] + "\n"
+
+    return a.removesuffix("\n")
+
+
+
+def wrap(string, max_width):
+    return "\n".join([string[i:i + max_width] for i in range(0, len(string), max_width)]) 
+
+
+
+def wrap(string, max_width):
+    for i in range(0, len(string) + 1, max_width):
+        result = string[i:max_width + i]
+	
+        if len(result) == max_width:
+            print(result)
+        else:
+            return (result)
+
+
+
+def wrap(string, max_width):
+    for i in range(0, len(string) + 1, max_width):
+    	print(string[i:max_width + i])
+
+
+
+# print(wrap("ABCDEFGHIJKLIMNOQRSTUVWXYZ", 4))
+# print(wrap("bscnksbcjscksbcjksbckjdscsbdcbsdkjbcsdjcbsdjkcbsdkjbckjdsbjksd", 9))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
