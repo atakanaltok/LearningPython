@@ -1,3 +1,9 @@
+
+if __name__ == '__main__':                        
+# it means name == 'main' In python single equal signs are reserved for variable assignment 
+# so a variable assignment is as so : name = 'John'
+# it means that if the of the file or the file name is equal to 'main' then it returns true else false
+
 #### 1 ####
 ### TASK ###
 Given an integer, n, perform the following conditional actions:
@@ -9,12 +15,9 @@ If n is even and greater than 20, print Not Weird
 
 
 ### MY CODE
-if __name__ == '__main__':                        # it means name == 'main' In python single equal signs are reserved for variable assignment 
-                                                  # so a variable assignment is as so : name = 'John'
-                                                  # it means that if the of the file or the file name is equal to 'main' then it returns true else false
-    n = int(input().strip())
+n = int(input().strip())
     
-if n%2==1:
+if n % 2 == 1:
     print("Weird")
 elif 2 <= n <= 5:
     print("Not Weird")
@@ -44,7 +47,7 @@ print( check [n%2==0 and (n in range(2,6) or n > 20)] )
 
 n = int(raw_input())    # We use rawinput() function to get input from user
 
-if n%2==0 and (n in range(2,6) or n>20 ):
+if n % 2 == 0 and (n in range(2,6) or n>20 ):
     print "Not",
 print "Weird"
 
@@ -132,5 +135,14 @@ if year % 4 == 0:
     elif year % 400 == 0:
         leap = True
 return leap
+
+
+
+
+
+
+
+
+
 
 
