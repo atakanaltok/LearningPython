@@ -1,0 +1,100 @@
+#  https://www.hackerrank.com/challenges/alphabet-rangoli/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+# My solution:
+def print_rangoli(size):
+    alp = "abcdefghijklmnopqrstuvwxyz"
+
+    width1 = (size - 1) * 4 + 1  # The width of the rangoli
+    width2 = ((width1 + 1) // 2) - 1  # The width from beginning to the middle of the rangoli
+
+    pattern1 = []
+    alp_pattern1 = ""
+
+    # To create the middle part of the rangoli
+    for i in range(size - 1, -1, -1):
+        alp_pattern1 += alp[i]
+
+    alp_pattern1 += alp_pattern1[-2:(-size) - 1:-1]
+    alp_pattern2 = "-".join(alp_pattern1)
+
+    # Creating the down part of the rangoli
+    for i in range(size):
+        # To append the parts in the list that is created at the beginning, pattern1:
+        pattern1.append(alp_pattern2)
+
+        # To extract letters for the next iteration:
+        alp_pattern2 = alp_pattern2.replace(alp_pattern2[slice(width2, width2 + 4)], "")
+
+        # To add dashes at the both sides to maintain the width:
+        alp_pattern2 = alp_pattern2.center(width1, "-")
+
+    # To merge all the parts of the rangoli
+    pattern2 = "\n".join(pattern1[::-1] + pattern1[1:])
+
+    print(pattern2)
+
+    return 
+
+
+
+
+# Some other solutions 
+
+def print_rangoli(size):
+    alp = "abcdefghijklmnopqrstuvwxyz"[0:size]
+
+    for i in range(size - 1, -size, -1):
+        x = abs(i)
+        line = alp[size:x:-1] + alp[x:size]
+        print("--" * x + "-".join(line) + "--" * x)
+
+
+
+
+def print_rangoli(size):
+    alp = "abcdefghijklmnopqrstuvwxyz"
+    for i in range(size - 1, -size, -1):
+        temp = '-'.join(alp[size - 1:abs(i):-1] + alp[abs(i):size])
+        print(temp.center(4 * size - 3, '-'))
+
+    return
+
+
+
+
+def print_rangoli(n):
+    topleft = [''.join([chr(ord('a') + n - i - 1) + '-' for i in range(x)])[:-1].rjust(n * 2 - 1, '-') for x in
+               range(1, n + 1)]
+    topright = [line[::-1] for line in topleft]
+
+    top = [topleft[i] + topright[i][1:] for i in range(len(topleft))]
+    bottom = list(reversed(top[:-1]))
+
+    rangoli = '\n'.join(top) + '\n' + '\n'.join(bottom)
+
+    print(rangoli)
+
+    return
+
+
+
+
+def print_rangoli(N):
+    # letters a...Nth letter of alphabet
+    letters = [chr(65 + N - i).lower() for i in range(1, N + 1)]
+    
+    # upper half
+    for i in range(1, N):
+        letters_on_line = letters[:i]
+        # 4N-3 is width of box
+        print(('-'.join(letters_on_line[:-1] + letters_on_line[::-1])).center(4 * N - 3, '-'))
+    
+    # middle
+    print('-'.join(letters[:-1] + letters[::-1]))
+    
+    # lower half
+    for i in range(N - 1, 0, -1):
+        letters_on_line = letters[:i]
+        # 4N-3 is width of box
+        print(('-'.join(letters_on_line[:-1] + letters_on_line[::-1])).center(4 * N - 3, '-'))
+
