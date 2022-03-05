@@ -144,10 +144,53 @@ https://www.hackerrank.com/challenges/text-wrap/problem?h_r=next-challenge&h_v=z
 
 
 
+### <str>.center(<int>, <str>)
+
+N, M = map(int, input().split())
+pattern = ".|."
+
+for i in range(1, N + 1):
+
+    rows = (N + 1) / 2
+
+    if i < rows:
+        print(pattern.center(M, "-"))
+        pattern += ".|..|."
+
+    elif i == rows:
+
+        a = "WELCOME"
+
+        print(a.center(M, "-"))
+        pattern = pattern[3:-3]
+
+    else:
+        print(pattern.center(M, "-"))
+        pattern = pattern[3:-3]
 
 
 
 
+"""
+
+Input:
+7 21
+
+Output:
+---------.|.---------
+------.|..|..|.------
+---.|..|..|..|..|.---
+-------WELCOME-------
+---.|..|..|..|..|.---
+------.|..|..|.------
+---------.|.---------
+
+"""
+
+
+N, M = map(int, input().split())
+pattern = [(".|." * (2 * i + 1)).center(M, "-") for i in range(N // 2)]		# ['---------.|.---------', '------.|..|..|.------', '---.|..|..|..|..|.---']
+print("\n".join(pattern + ['WELCOME'.center(M, "-")] + pattern[::-1]))
 
 
 
