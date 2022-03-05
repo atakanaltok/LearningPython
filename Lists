@@ -1,33 +1,25 @@
-CREATING LISTS
+### CREATING LISTS
 
 letters = ["a", "b", "c"]     
 matrix = [[0, 1], [1, 2]]
 zeros = [0] * 5
 numbers = list(range(20))
-asteix = [*range(4)]        === list(range(4)) === [0, 1, 2, 3]
+asteix = [*range(4)]         = list(range(4)) === [0, 1, 2, 3]
 
 
 
 
-============> ACCESSING VALUES IN LISTS
+### ACCESSING VALUES IN LISTS
 
 k=True
 
-omega = [44-22, k, "k","22*2", 22*2]     ===    [22, True, ‘k’, ‘22*2’, 44]
+omega = [44-22, k, "k","22*2", 22*2]     # [22, True, ‘k’, ‘22*2’, 44]
 
 
 omega [:]        # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
 omega [:: 1]     # Identity  ===    [22, True, ‘k’, ‘22*2’, 44]
 
-# Reversing a list
-
-omega [::-1]                 ===    [44, '22*2', 'k', True, 22]
-list(reversed(omega))        ===    [44, '22*2', 'k', True, 22]
-[*reversed(omega)]           ===    [44, '22*2', 'k', True, 22]
-
-
-# Why those identities exist?
-# For equating lists with different id’s
+# We use identities for equating lists with different id’s
 
 a = list(range(4)
 
@@ -46,43 +38,67 @@ b = a.copy()
 
 
 
-======>If last number is 
-positive ==> Counted from left to right (THIS IS THE DEFAULT)
-negative ==> Counted from right to left
 
 
-This means that when:
-==> positive, the latter number must be greater than former number 
 
+### REVERSING A LIST
+
+omega [::-1]                 ===    [44, '22*2', 'k', True, 22]
+list(reversed(omega))        ===    [44, '22*2', 'k', True, 22]
+[*reversed(omega)]           ===    [44, '22*2', 'k', True, 22]
+
+
+omega [::-2]                 ===    [44, 'k', 21]                   
+
+
+
+
+### 
+
+omega [::2]                  ===    [22, "k", 44]         === omega [-len(omega)::2]
+
+
+
+
+
+
+### SLICING LISTS
+
+[<int1>:<int2>:<int3>]
+
+<int3> positive ==> Counted from left to right (DEFAULT)
+<int3> negative ==> Counted from right to left
+
+
+
+# If <int3> positive, <int1> is smaller than <int2>
+
+# [22, True, ‘k’, ‘22*2’, 44]
 omega [:2]                   ===    [22, True]                      0 < 2
-omega [2:4]                  ===    ['k', '22*2']                   3 < 5
+omega [2:4]                  ===    ['k', '22*2']                   2 < 4
 omega [1:13]                 ===    [True, 'k', '22*2', 44]         1 < 13
 omega [-5:-2]                ===    [22, True, 'k']                -5 < -2
 omega [-3::2]                ===    ["k", 44]                      -3 < len(omega)
 omega [-32::2]               ===    [21, 'k', 99]                 -32 < len(omega)
 
 
-==> negative, the former number must be greater than latter number
-
-omega [4::-1]                ===    [44, '22*2', 'k', True, 21]     4 > len
-omega [:-100:-1]             ===    [44, '22*2', 'k', True, 21]
-omega [::-2]                 ===    [44, 'k', 21]
 
 
 
-omega [::2]                  ===    [22, "k", 44]         === omega [-len(omega)::2]
 
-omega[len(anything):]
+# If <int3> negative, <int1> is bigger than <int2>
 
+# [22, True, ‘k’, ‘22*2’, 44]
+omega [4::-1]                ===    [44, '22*2', 'k', True, 21]      4 > len(omega)
+omega [:-100:-1]             ===    [44, '22*2', 'k', True, 21]     -1 > -100
+omega [-2:-4:-1]             ===    ['22*2', 'k']                   -2 > -4
 
 
 
 
 
 
-
-
-=========> Changing portions in list
+### CHANGING PORTIONS IN LIST
 
 omega[:2] = [11,101]      # Changes firs two
 
@@ -92,11 +108,34 @@ omega[:]  = []            # Deletes list
 omega.clear()             # Deletes list
 
 
-# Removing items 
+
+
+
+
+### Commands that are out of the rage will give blank
+
+omega[7:] 
+omega[7:13] 
+omega[:13]
+
+omega[2:-4] 
+omega[::-1]
+
+
+
+
+
+
+### REMOVING ITEMS
+
 letters.pop()
 letters.pop(0)
 letters.remove("b")
 del letters[0:3]
+
+
+
+
 
 
 # Finding items 
@@ -106,7 +145,8 @@ if "f" in letters:
  
 
 
- 
+
+
 # Map and filter 
 prices = list(map(lambda item: item[1], items))
 expensive_items = list(filter(lambda item: item[1] >= 10, items))
@@ -123,14 +163,6 @@ combined = list(zip(list1, list2))    # [(1, 10), (2, 20)]
 
 
 
-======> Commands that are out of the rage will give blank
-
-omega[7:] 
-omega[7:13] 
-omega[:13]
-
-omega[2:-4] 
-omega[::-1]
 
 
 
@@ -142,7 +174,7 @@ omega[::-1]
 
 
 
-============> LISTS IN LISTS
+### LISTS IN LISTS
 
 
 alpha = [  [2,4,6,8], 101, "a word", ["nested", 1008, 234]  ]
