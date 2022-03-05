@@ -1,9 +1,12 @@
 # Formatted strings
-name = f”{first} {last}”
-
+def name_display(first, last):
+    name = f"{first} {last}"
+    retun name
 
 
 "{} is what we call {}".format
+
+
 
 n = input()
 
@@ -21,15 +24,36 @@ There are 3 ways of formatting
 
 
 
-# First way
+### First way
 # format(___, ".#f")
 
 print(format(120.329, ".2f"))
 print("ajan" + "  ", format(12.83928172, ".2f"))
 
 
+name1 = "Mike"
+name2 = "Sam"
+print("{} has come and {} has gone".format(name1, name2))       # Mike has come and Sam has gone
 
-# Second way
+print("{0} has come and {1} has gone".format(name1, name2))     # Mike has come and Sam has gone
+
+print("{1} has come and {0} has gone".format(name1, name2))     # Sam has come and Mike has gone
+
+print("{1} has come and {1} has gone".format(name1, name2))     # Sam has come and Sam has gone
+
+print("{0} has come and {0} has gone".format(name1, name2))     # Mike has come and Mike has gone
+
+
+
+servers = 1389
+print("Hello {new_name}\nYou are welcome to {server}".format(new_name = "Jack", server = f"server {servers}"))
+
+
+
+
+
+
+### Second way
 # {:.#f}.format(___)
 
 print("{0:.2f}".format(120.329))
@@ -42,24 +66,61 @@ print(format_float)
 
 
 
-# Third way
+
+
+
+### Third way (still available in Python(3.x) but nowadays the old style of formatting is removed from the language)
 # "%.#f" %___
 
 # The %.#f format specifier indicates that a value should be formatted as...
 # ... a floating point number with # digits to the right of the decimal point
 # This formatting rounds the number as in print("%.1f" %10.48) ===> 10.5
 
-print("%0.2f" %120.329)
-print("you can write anything  %.4f" % 12.83928172)
-print("123 thing     %.3f" % 12.83928172, "axaxax")
-print("%.2f" %example1, "\n%.3f" %example2,"\n%.1f" %example3)
-print("you can %.2f write %.3f anything %.2f" %(12, 13, 15))
+
+
 print("%.3f %2f %")
-print("it doesn't have to be 2 decimals %.100f" % x)
+>>> %.3f %2f %
+
+
+print("%.2f" %12.567)
+>>> 12.57
+
+
+print("%.3f" % 12.83928172, "axaxax")
+>>> 12.839 axaxax
+
+
+print("You can write anything %.4f" % 12.83928172)
+>>> You can write anything 12.8393
+
+
+print("%0.2f" % 120.329)
+>>> 120.33
+
+
+example1 = 9000
+example2 = 23
+example3 = 134
+print("%.2f" % example1, "\n%.3f" % example2, "\n%.1f" % example3)
+>>> 9000.00 
+>>> 23.000 
+>>> 134.0
+
+
+print("You can %.2f write %.3f anything %.2f" % (12, 13, 15))
+>>> You can 12.00 write 13.000 anything 15.00
+
+
+x = 1246030.342525
+print("It doesn't have to be 2 decimals %.15f" % x)
+>>> It doesn't have to be 2 decimals 1246030.342524999985471
+
+
 print(
     "It %.10f can be %.7f anything %.5f"
     % (123.321, 13.32532415, 15.91919191)
 )
+>>> It 123.3210000000 can be 13.3253242 anything 15.91919
 
 
 
