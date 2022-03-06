@@ -98,3 +98,113 @@ def print_rangoli(N):
         # 4N-3 is width of box
         print(('-'.join(letters_on_line[:-1] + letters_on_line[::-1])).center(4 * N - 3, '-'))
 
+
+
+
+
+
+
+
+
+
+# https://www.hackerrank.com/challenges/the-minion-game/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+
+# My solution:
+
+def minion_game(string):
+    substring_dict = {}
+    vowel_list = []
+
+    for i in range(len(string)):
+        for j in range(len(string)):
+            substring_dict[string[i:j + 1]] = 0
+
+    for i in range(len(string)):
+        for j in range(len(string)):
+            substring_dict[string[i:j + 1]] += 1
+
+    del substring_dict[""]
+
+    substring_dict2 = substring_dict.copy()
+
+    for i in "AEIOU":
+        for j in substring_dict.keys():
+            if i == j[0]:
+                vowel_list.append(substring_dict2.pop(j))
+
+    vowel_values = sum(vowel_list)
+    consonant_values = sum(substring_dict2.values())
+
+    if vowel_values < consonant_values:
+        print(f"Stuart {consonant_values}")
+
+    elif vowel_values > consonant_values:
+        print(f"Kevin {vowel_values}")
+
+    else:
+        print("Draw")
+
+    return
+
+
+
+
+# Some other solutions 
+"""
+The trick to this challenge is to realize that there are n+(n-1)+(n-2)+...+2+1=n(n+1)/2 substrings in a word of length n
+Therefore, since any substring starts exclusively with either a vowel or a consonant, we only need to count the number 
+of substrings starting with a vowel and subtract from the total number of substrings to get the number of substrings 
+starting with a consonant, or vice versa
+"""
+
+
+def minion_game(string):
+    vowels = 'AEIOU'
+
+    kevsc = 0
+    stusc = 0
+    for i in range(len(string)):
+        if string[i] in vowels:
+            kevsc += (len(string) - i)
+        else:
+            stusc += (len(string) - i)
+
+    if kevsc > stusc:
+        print("Kevin", kevsc)
+    elif kevsc < stusc:
+        print("Stuart", stusc)
+    else:
+        print("Draw")
+
+
+
+
+def minion_game(string):
+ 
+    vowels = ["A", "E", "I", "O", "U"]
+
+    def isVowel(char):
+        return char in vowels
+
+    def isConsonant(char):
+        return char not in vowels
+
+    def numSubstr(n):
+        return int(n*(n+1)/2)
+
+    score = 0
+    num = numSubstr(len(string))
+
+    for i in range(len(string)):
+        if (isVowel(string[i])):
+            score += len(string) - i
+
+    if (score > num / 2):
+        print("Kevin " + str(score))
+    elif (score < num / 2):
+        print("Stuart " + str(num - score))
+    else:
+        print("Draw")
+
+
