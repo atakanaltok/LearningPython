@@ -208,3 +208,56 @@ def minion_game(string):
         print("Draw")
 
 
+
+
+
+
+# https://www.hackerrank.com/challenges/merge-the-tools/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+def merge_the_tools(string, k):
+    while string:
+        s = string[0:k]
+        seen = ''
+
+        for i in s:
+            if i not in seen:
+                seen += i
+        print(seen)
+        string = string[k:]
+
+
+
+
+s = input()
+k = int(input())
+n = len(s)
+
+for i in range(0, n, k):
+    print(''.join(sorted(set(s[i:i + k]), key=lambda x: s[i:i + k].index(x))))
+
+
+
+
+def merge_the_tools(s, k):
+    for item in zip(*[iter(s)] * k):
+        list1 = []  
+        for item1 in item:
+            if item1 not in list1:
+                list1.append(item1)
+        print(*list1, sep='')
+
+
+
+
+def merge_the_tools(string, k):
+    t = ""
+    for i in range(len(string)):
+        if not (string[i] in t):
+            t += string[i]
+
+        if ((i + 1) % k) == 0:
+            print(t)
+            t = ""
+
+
+
