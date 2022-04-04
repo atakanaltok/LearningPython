@@ -1,4 +1,4 @@
-# My python codes for basics
+# My python codes
 
 ### The Python Workbook: A Brief Introduction with Exercises and Solutions
 Written By: Ben Stephenson
