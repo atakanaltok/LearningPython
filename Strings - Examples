@@ -261,3 +261,13 @@ def merge_the_tools(string, k):
 
 
 
+
+
+# Crazy keyboards
+args = "Atakana hayat güzel"
+print(("{}_" * len(args)).format(*args))
+# A_t_a_k_a_n_a_ _h_a_y_a_t_ _g_ü_z_e_l_
+
+
+
+
