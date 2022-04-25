@@ -1,0 +1,54 @@
+# More readable numbers
+
+A = 10000000
+B = 10_000_000
+
+## A and B are identical, A==B, but you can read B easier
+
+
+
+
+
+"""
+number = 3
+if number == 1 or 2:
+    print('number is one or two')
+else:
+    print('number is something else')
+""" 
+    
+# When you give the expression 
+
+number == 1 or 2
+
+# python consider it as 
+
+IF (number == 1) OR 2
+
+# And since the number "2" is True, it wil execute the if statement
+
+
+# SOLUTIONs
+
+if number == 1 or number == 2:
+
+if number in {1, 2}:
+
+
+
+
+
+# Unpacking Operator
+
+first = [1, 2, 3]
+second = [4, 5, 6]
+combined = [*first, "a", *second]
+ 
+first = {"x": 1}
+second = {"y": 2}
+combined = {**first, **second}
+
+
+
+
+
