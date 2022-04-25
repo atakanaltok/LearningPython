@@ -1,6 +1,6 @@
 # Handling Exceptions 
 try: 
-  … 
+  …
 except (ValueError, ZeroDivisionError):
   …
 else: 
@@ -9,12 +9,36 @@ finally:
   # cleanup code 
  
 # Raising exceptions 
-if x < 1:      
+if x < 1:   
     raise ValueError(“…”)
  
 # The with statement 
-with open(“file.txt”) as file:     
+with open(“file.txt”) as file: 
    … 
    
    
 
+while True:
+    try:
+        print("Lastest")
+        print(1)
+        a = int(input("Hel: "))
+        print("Victory\n")
+    except:
+        print("Defeat \n")
+
+
+
+
+
+
+while True:
+    try:
+        user_input = input("Enter a number between 1 and 10: ")
+        number = int(user_input)
+        if 1 <= number <= 10:
+            break
+        else:
+            print(f"{number} is not between 1 and 10.")
+    except ValueError:
+        print(f"{user_input} is not a number.")
