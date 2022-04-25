@@ -1,28 +1,39 @@
 # Handling Exceptions 
+
 try: 
-  …
+  ...
+  
 except (ValueError, ZeroDivisionError):
-  …
+  ...
+  
 else: 
-  # no exceptions raised
+  print("no exceptions raised")
+  
 finally:
-  # cleanup code 
- 
+  ...
+
+
+
+
+
 # Raising exceptions 
+
 if x < 1:   
     raise ValueError(“…”)
  
+ 
 # The with statement 
+
 with open(“file.txt”) as file: 
-   … 
+   ... 
    
    
 
 while True:
     try:
-        print("Lastest")
-        print(1)
-        a = int(input("Hel: "))
+        print("Lastest")            # Executed
+        print(1)                    # Executed
+        a = int(input("Hel: "))     # Exception will rise if the input is not an integer
         print("Victory\n")
     except:
         print("Defeat \n")
