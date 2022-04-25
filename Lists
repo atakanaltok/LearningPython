@@ -84,14 +84,22 @@ omega [-32::2]               ===    [21, 'k', 99]                 -32 < len(omeg
 
 
 
-
-
 # If <int3> negative, <int1> is bigger than <int2>
 
 # [22, True, ‘k’, ‘22*2’, 44]
 omega [4::-1]                ===    [44, '22*2', 'k', True, 21]      4 > len(omega)
 omega [:-100:-1]             ===    [44, '22*2', 'k', True, 21]     -1 > -100
 omega [-2:-4:-1]             ===    ['22*2', 'k']                   -2 > -4
+
+
+
+# Exact same logic is applied for the range()
+
+sequence    = a list that contains only numbers
+list        = can take many types of arguments
+range       = an interval
+
+
 
 
 
