@@ -3,7 +3,7 @@ s = set([1, 2, 3, 4, 5, 6, 7, 8, 9])
 .discard() 	# Same as the .remove but it just doesn’t raise a KeyError when the element is not in the set
 .remove()
 .pop()
-.add()	# Doesn’t add an existing item again
+.add()		# Doesn’t add an existing item again
 
 These all return None
 
@@ -12,14 +12,15 @@ These all return None
 
 
 # Instead of writing
+
 a = input().split() 
 if a[0] == “remove”: 
 s.remove(int(a[1]))
 elif a[0] == “pop”:
 	s.pop(int(a[1])
 
+# Write (1)
 
-# Write 1
 n = int(input())
 s = set(map(int, input().split()))
 for i in range(int(input())):
@@ -27,7 +28,8 @@ for i in range(int(input())):
 print(sum(s))
 
 
-# Write 2
+# Write (2)
+
 len_A = int(input())
 A = set(map(int, input().split()))
 _ = int(input())
@@ -36,7 +38,7 @@ for i in range(_):
 print(sum(A))
 
 
-# Write 3 
+# Write (3) 
 (_, A) = (int(input()),set(map(int, input().split())))
 B = int(input())
 for _ in range(B):
@@ -50,7 +52,6 @@ print (sum(A))
 
 
 """
-
 https://www.hackerrank.com/challenges/py-the-captains-room/problem
 
 5
@@ -62,22 +63,24 @@ At the end, what you get is K * 8
 By applying floor division to is with K -1, we can find the number 8 
 (K * 8) // (K – 1)
 Note: the number 8 is the unknown that we are trying to find
-
 """
+
 
 K = int(input())
 number_set = list(map(int, input().split()))
 print(((sum(set(number_set)) * K - sum(number_set)) // (K - 1)))
 
 
-""" Continued 
+
+""" 
+Continued 
 Sort the list of room numbers  t
 Then split that list into two sets with one containing the even elements and the other the odd elements
 Since the number of members in a group, K, will always be greater than 1 each set contained the same room numbers except for the set that contained the captain's room
 From there, take the symmetric difference of both sets to get the captain's room
 Sorting takes minimum O(nlogn); therefore, it is slower
-
 """
+
 
 K = int(input())
 rooms = input().split()
@@ -106,10 +109,3 @@ for i in num_set:
     if i not in num_list:
         print(i)
         break
-
-
-
-
-
-
-
