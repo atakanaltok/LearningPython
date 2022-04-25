@@ -107,8 +107,127 @@ def print_rangoli(N):
 
 
 
-# https://www.hackerrank.com/challenges/the-minion-game/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 
+# https://www.hackerrank.com/challenges/text-wrap/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+# Wrapping a text into a column with a specified width
+
+""" 
+Example: print(wrap("asdfjnaksdbfaskfdajls", 3))
+
+OUTPUT:
+asd
+fjn
+aks
+dbf
+ask
+fda
+jls
+"""
+
+
+def wrap(string, max_width):
+    a = ""
+    b = len(string) // int(max_width)
+
+    for i in range(b + 1):
+        a = a + string[max_width * i: max_width * (i + 1)] + "\n"
+
+    return a.removesuffix("\n")
+
+
+def wrap(string, max_width):
+    return "\n".join([string[i:i + max_width] for i in range(0, len(string), max_width)])
+
+
+def wrap(string, max_width):
+    for i in range(0, len(string) + 1, max_width):
+        result = string[i:max_width + i]
+
+        if len(result) == max_width:
+            print(result)
+        else:
+            return (result)
+
+
+def wrap(string, max_width):
+    for i in range(0, len(string) + 1, max_width):
+        print(string[i:max_width + i])
+
+
+# print(wrap("ABCDEFGHIJKLIMNOQRSTUVWXYZ", 4))
+# print(wrap("bscnksbcjscksbcjksbckjdscsbdcbsdkjbcsdjcbsdjkcbsdkjbckjdsbjksd", 9))
+
+
+
+
+
+
+# https://www.hackerrank.com/challenges/alphabet-rangoli/problem?isFullScreen=false
+
+# <str>.center(<int>, <str>)
+
+N, M = map(int, input().split())
+pattern = ".|."
+
+for i in range(1, N + 1):
+
+    rows = (N + 1) / 2
+
+    if i < rows:
+        print(pattern.center(M, "-"))
+        pattern += ".|..|."
+
+    elif i == rows:
+
+        a = "WELCOME"
+
+        print(a.center(M, "-"))
+        pattern = pattern[3:-3]
+
+    else:
+        print(pattern.center(M, "-"))
+        pattern = pattern[3:-3]
+
+"""
+
+Input:
+7 21
+
+Output:
+---------.|.---------
+------.|..|..|.------
+---.|..|..|..|..|.---
+-------WELCOME-------
+---.|..|..|..|..|.---
+------.|..|..|.------
+---------.|.---------
+
+"""
+
+N, M = map(int, input().split())
+pattern = [(".|." * (2 * i + 1)).center(M, "-") for i in
+           range(N // 2)]  # ['---------.|.---------', '------.|..|..|.------', '---.|..|..|..|..|.---']
+print("\n".join(pattern + ['WELCOME'.center(M, "-")] + pattern[::-1]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# https://www.hackerrank.com/challenges/the-minion-game/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 
 # My solution:
 
