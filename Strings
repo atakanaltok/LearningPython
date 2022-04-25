@@ -9,73 +9,79 @@ A < B < C … Z < a < b < c … z
 """
 
 
-Immutable
+# Escape Sequences are counted as 1-line 
 
-# Assigning value
+print(len("X\nY")) 		# 3
+print(len("a \n b \n c"))	# 9
+
+
+
+# sep=""
+
+print("honey" + "bee", "bee", "beehive", sep="_")           # honeybee_bee_beehive
+print("honey", "bee", "beehive", sep="_" + "OoO" + "_")     # honey_OoO_bee_OoO_beehive
+
+
+
+
+
+# Immutable ==> Mutable + Changing ==> Immutable
+
 
 string = "abracadabra"
 l = list(string)
-
-l[5] = "k"
+l[5] = "k "
 string = "".join(l)
 
-print(string)   # abrackdabra
+print(string)   # abrack dabra
 
 
+## An example
 
-string = string[:5] + "k" + string[6:]
+def present_participle_generator(s):
+    s = str(s)
+    s_list = list(s)
 
-print(string)     # abrackdabra
+    if s.endswith("ie"):
+        s_list[-2:] = 'ying'
 
+    elif s.endswith("e"):
+        s_list[-1] = "ing"
 
+    else:
+        s_list.append("ing")
 
-
-
-
-
-
-
-
-# The built-in string functions don’t modify the originial string and return a new, altered string
-
-greet = "Hello X"
-greet.lower()	
-
-print(greet.lower())    # hello x
-print(greet)            # Hello x
+    suffix = "".join(s_list)
+    return suffix
 
 
-
-
+while True:
+    print(present_participle_generator(input("Enter: ")))
 
 
 
 
+# Another way
+
+string = string[:5] + "k " + string[6:]
+
+print(string)	# abrackdabra
+
+
+
+
+
+
+
+# Getting a string from specific interval
 
 data = "From atakanaltok@gmail.com"
 at = data.find("@")
 ending = data.find(".")
 extention = data[at + 1:ending]
 
-print(extention)
-# gmail
+print(extention)	# gmail
 
-
-
-
-
-
-
-# String Addition
-"men" + "ken"
-
-"men" * 3 	# "menmenmen"
-[men] * 3 	# ['men', 'men', 'men']
-
-
-x = arragement
-if “ra” in x:
-	print("x has the letters ra")
 
 
 
