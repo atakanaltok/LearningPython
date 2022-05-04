@@ -9,3 +9,29 @@ Written By: Ben Stephenson
 #
 ### HackerRank
 My codes for the problems 
+
+
+
+
+
+| Types of Cases | 
+| --- | 
+| flatcase | 
+| camelCase | 
+| PascalCase | 
+| kebab-case (Lisp case) | 
+| snake_case  | 
+| SCREAMING_SNAKE_CASE | 
+
+
+
+Types, Interfaces, Namespaces
+
+| General Use | Type of Case | 
+| --- | --- |
+| variables, properties, attributes, methods, functions, constructor and parameters | camelCase |
+| Objects, Functions, Classes | PascalCase |
+|URLs|kebab-case (Lisp case)	
+|Database tables, field names, properties, methods, variables| snake_case|
+|Constants and Enums| SCREAMING_SNAKE_CASE|
+
